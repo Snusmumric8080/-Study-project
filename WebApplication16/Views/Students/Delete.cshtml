@@ -1,0 +1,156 @@
+﻿@model WebApplication16.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить запись?</h3>
+<div>
+    <h4>Информация о ученике:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("ФИО ученика:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullNameStudent)
+        </dd>
+
+        <dt>
+            @Html.Label("Город проживания:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Town)
+        </dd>
+
+        <dt>
+            @Html.Label("Улица:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+
+        <dt>
+            @Html.Label("Дом:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Home)
+        </dd>
+
+        <dt>
+            @Html.Label("Классный руководитель:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherFullName)
+        </dd>
+
+        <dt>
+            @Html.Label("Место рождения:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaseOfBirt)
+        </dd>
+
+        <dt>
+            @Html.Label("Дата рождения:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirt)
+        </dd>
+
+        <dt>
+            @Html.Label("Класс:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.klass)
+        </dd>
+    </dl>
+    <br />
+    <h4>Информация о маме:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Фио мамы:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullNameMother)
+        </dd>
+
+        <dt>
+            @Html.Label("Номер:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumerMother)
+        </dd>
+
+        <dt>
+            @Html.Label("Место работы:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaseWorkMother)
+        </dd>
+    </dl>
+    <br />
+    <h4>Информация о папе:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Фио папы:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullNameFather)
+        </dd>
+
+        <dt>
+            @Html.Label("Номер:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberFather)
+        </dd>
+
+        <dt>
+            @Html.Label("Место работы:", htmlAttributes: new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaseWorkFather)
+        </dd>
+        </dl>
+        <br />
+      
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.Label("Почта для связи:", htmlAttributes: new { @class = "control-label col-md-2" })
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Mail)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+}
+</div>

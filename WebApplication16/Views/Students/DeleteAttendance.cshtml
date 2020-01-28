@@ -1,0 +1,42 @@
+﻿@model WebApplication16.Models.AttendanceStudent
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить эту запись?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+     
+
+        <dd>
+            @Html.DisplayFor(model => model.Attendance1.IdAttendance)
+        </dd>
+
+   
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FullNameStudent)
+        </dd>
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("К списку учеников", "Index")
+        </div>
+    }
+</div>

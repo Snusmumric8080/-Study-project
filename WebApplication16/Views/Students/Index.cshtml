@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication16.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Список учеников:</h2>
+@Html.ActionLink("Добавить новую запись ", "Create")
+<table class="table">
+    <tr>
+        <th> ФИО ученика </th>
+        <th> Дата рождения </th>
+        <th> Класс </th>
+        <th> Адресс </th>
+        <th>  </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameStudent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.klass)
+        </td>
+        <td>
+            <p></p>@Html.DisplayFor(modelItem => item.Street) дом: @Html.DisplayFor(modelItem => item.Home)
+        </td>
+        <td>@Html.ActionLink("подробнее", "Details", new { id = item.IdStudent }, new { @class = "more" })</td>
+        <td>@Html.ActionLink("изменить", "Edit", new { id = item.IdStudent }, new { @class = "change" })</td>
+        <td>@Html.ActionLink("удалить", "Delete", new { id = item.IdStudent }, new { @class = "del" })</td>
+        <td>@Html.ActionLink("успеваемость", "Progress", new { id = item.IdStudent }, new { @class = "del" })</td>
+        <td>@Html.ActionLink("посещаемость", "AttendanceStudent", new { id = item.IdStudent }, new { @class = "del" })</td>
+    </tr>
+    }
+
+</table>

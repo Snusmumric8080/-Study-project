@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplication16.Models.Subject>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Предметы:</h2>
+
+<p>
+    @Html.ActionLink("Добавить новый", "CreateSubject")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Название:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameSubject)
+        </td>
+        <td>
+            @Html.ActionLink("Удалить", "DeleteSubject", new { id=item.IdSubject })
+        </td>
+    </tr>
+}
+
+</table>

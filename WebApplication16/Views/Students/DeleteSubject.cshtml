@@ -1,0 +1,31 @@
+﻿@model WebApplication16.Models.Subject
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы дейсвительно хотите удалить это? Все оценки учеников по данномому предмету, тоже удалятся.</h3>
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+           Предмет:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameSubject)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("К списку предметов", "Subject")
+        </div>
+    }
+</div>

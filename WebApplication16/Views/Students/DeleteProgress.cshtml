@@ -1,0 +1,45 @@
+﻿@model WebApplication16.Models.Progress
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить запись?</h3>
+<div>
+    <h4>Успеваемость</h4>
+    <hr />
+    <dl class="dl-horizontal">
+      
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FullNameStudent)
+        </dd>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject.NameSubject)
+        </dd>
+
+     
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("К списку учеников", "Index")
+        </div>
+    }
+</div>

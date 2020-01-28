@@ -1,0 +1,38 @@
+﻿@model WebApplication16.Models.Student
+@{
+    ViewBag.Title = "AttendeStudent";
+}
+
+<h2>Посещаемось</h2>
+<h4>@Html.DisplayFor(model => model.FullNameStudent)</h4>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            Статус
+        </th>
+        <th>
+            Дата
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.AttendanceStudents)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAttendance)
+            </td>
+
+            <td>@Html.ActionLink("удалить", "DeleteAttendance", new { id = item.IDAttendanceStudent }, new { @class = "del" })</td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("К списку учеников", "Index")
+</p>
+

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication16.Models.Attendance1>
+
+@{
+    ViewBag.Title = "Числа";
+}
+
+<h2>Числа</h2>
+
+<p>
+    @Html.ActionLink("Добавить дату", "CreateAttedence")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdAttendance)
+</tr>
+}
+
+</table>
